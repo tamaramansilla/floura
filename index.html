@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FLUORA: harinas de quinoa y arroz en Santa Cruz de la Sierra, Bolivia.">
+<title>FLUORA | Raíces naturales, para todos</title>
+
+<style>
+:root {
+--cream: #F7F2E8;
+--paper: #FFFDF7;
+--olive: #3E4C32;
+--sage: #879276;
+--terracotta: #A76545;
+--ink: #303329;
+--muted: #737467;
+--line: #DED7C7;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+background: var(--cream);
+color: var(--ink);
+font-family: Arial, sans-serif;
+line-height: 1.7;
+}
+
+a {
+color: inherit;
+}
+
+header {
+background: var(--cream);
+border-bottom: 1px solid var(--line);
+padding: 18px 7%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.logo {
+color: var(--olive);
+font: bold 30px Georgia, serif;
+letter-spacing: 4px;
+text-decoration: none;
+}
+
+nav {
+display: flex;
+gap: 22px;
+flex-wrap: wrap;
+}
+
+nav a {
+font-size: 12px;
+letter-spacing: 1px;
+text-decoration: none;
+text-transform: uppercase;
+}
+
+nav a:hover {
+color: var(--terracotta);
+}
+
+.hero {
+max-width: 1200px;
+margin: auto;
+padding: 85px 7%;
+display: grid;
+grid-template-columns: 1fr 1fr;
+align-items: center;
+gap: 55px;
+}
+
+.eyebrow {
+color: var(--terracotta);
+font-size: 11px;
+font-weight: bold;
+letter-spacing: 3px;
+text-transform: uppercase;
+}
+
+h1, h2, h3 {
+font-family: Georgia, serif;
+font-weight: normal;
+color: var(--olive);
+}
+
+h1 {
+font-size: clamp(45px, 6vw, 76px);
+line-height: 1.05;
+margin: 20px 0;
+}
+
+h1 em {
+color: var(--terracotta);
+}
+
+.hero p, .section-intro {
+color: var(--muted);
+max-width: 520px;
+}
+
+.button {
+display: inline-block;
+margin-top: 25px;
+padding: 13px 22px;
+background: var(--olive);
+border: 1px solid var(--olive);
+color: white;
+font-size: 11px;
+letter-spacing: 1px;
+text-decoration: none;
+text-transform: uppercase;
+}
+
+.button:hover {
+background: var(--terracotta);
+border-color: var(--terracotta);
+}
+
+.hero-art {
+min-height: 380px;
+padding: 35px;
+background: #E8DFCD;
+border: 1px solid var(--line);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+.botanical {
+color: var(--sage);
+font: 48px Georgia, serif;
+margin-bottom: 12px;
+}
+
+.hero-art .logo {
+font-size: clamp(35px, 5vw, 56px);
+}
+
+.tagline {
+font-size: 13px;
+margin-top: 10px;
+}
+
+.rule {
+width: 75px;
+height: 1px;
+background: var(--terracotta);
+margin: 22px auto;
+}
+
+.strip {
+padding: 16px;
+background: var(--olive);
+color: var(--cream);
+text-align: center;
+font-size: 11px;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+section {
+padding: 80px 7%;
+}
+
+.section-heading {
+text-align: center;
+max-width: 680px;
+margin: 0 auto 40px;
+}
+
+.section-heading h2 {
+font-size: clamp(34px, 4vw, 50px);
+line-height: 1.15;
+margin: 12px 0;
+}
+
+.section-heading p {
+color: var(--muted);
+}
+
+.about {
+max-width: 1050px;
+margin: auto;
+display: grid;
+grid-template-columns: 1fr 1.3fr;
+gap: 55px;
+align-items: center;
+}
+
+.about-art {
+background: #E8DFCD;
+padding: 35px;
+min-height: 300px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.about-art strong {
+font: 42px/1.2 Georgia, serif;
+color: var(--olive);
+}
+
+.about p {
+color: var(--muted);
+margin-top: 15px;
+}
+
+.products {
+background: #ECE6D9;
+}
+
+.product-grid {
+max-width: 1100px;
+margin: auto;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 25px;
+}
+
+.product {
+background: var(--paper);
+border: 1px solid var(--line);
+padding: 35px;
+}
+
+.product .number {
+color: var(--terracotta);
+font: italic 16px Georgia, serif;
+}
+
+.product h3 {
+font-size: 34px;
+margin: 10px 0;
+}
+
+.product p {
+color: var(--muted);
+margin: 12px 0;
+}
+
+.product h4 {
+color: var(--olive);
+font-size: 11px;
+letter-spacing: 1.5px;
+margin-top: 20px;
+text-transform: uppercase;
+}
+
+.price {
+color: var(--terracotta);
+font: 27px Georgia, serif;
+margin-top: 25px;
+}
+
+.weight {
+color: var(--muted);
+font: 12px Arial, sans-serif;
+}
+
+.benefits {
+max-width: 1100px;
+margin: auto;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 30px;
+}
+
+.benefit {
+border-top: 1px solid var(--sage);
+padding-top: 20px;
+}
+
+.benefit h3 {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+.benefit p {
+color: var(--muted);
+font-size: 14px;
+}
+
+.contact {
+background: var(--olive);
+color: var(--cream);
+}
+
+.contact h2, .contact h3 {
+color: var(--cream);
+}
+
+.contact .section-heading p {
+color: #D8DCCF;
+}
+
+.contact-grid {
+max-width: 1000px;
+margin: auto;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+.contact-item {
+padding: 18px 0;
+border-bottom: 1px solid #68735F;
+}
+
+.contact-item small {
+display: block;
+color: #C6CDBB;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+.contact-item a {
+text-decoration: none;
+font-size: 18px;
+}
+
+.map {
+background: var(--cream);
+color: var(--olive);
+padding: 30px;
+min-height: 280px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.map h3 {
+font-size: 29px;
+margin: 10px 0;
+}
+
+.map p {
+color: var(--muted);
+font-size: 13px;
+}
+
+footer {
+padding: 25px 7%;
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 15px;
+color: var(--muted);
+font-size: 11px;
+}
+
+@media (max-width: 750px) {
+.hero, .about, .contact-grid {
+grid-template-columns: 1fr;
+}
+
+.product-grid {
+grid-template-columns: 1fr;
+}
+
+.benefits {
+grid-template-columns: 1fr;
+}
+
+.hero {
+padding-top: 55px;
+}
+
+section {
+padding: 60px 7%;
+}
+
+header {
+align-items: flex-start;
+}
+}
+</style>
+</head>
+
+<body>
+<header>
+<a class="logo" href="#inicio">FLUORA</a>
+<nav>
+<a href="#nosotros">Nosotros</a>
+<a href="#productos">Productos</a>
+<a href="#beneficios">Beneficios</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+<div>
+<div class="eyebrow">Harinas alternativas · Bolivia</div>
+<h1>Raíces naturales.<br><em>Hechas para todos.</em></h1>
+<p>
+Descubre las harinas de quinoa y arroz de FLUORA:
+ingredientes versátiles para explorar nuevas recetas
+y ampliar tus opciones en la cocina.
+</p>
+<a class="button" href="#productos">Conoce nuestras harinas</a>
+</div>
+
+<div class="hero-art">
+<div class="botanical">FL.</div>
+<div class="logo">FLUORA</div>
+<div class="tagline">Rooted in nature. Made for everyone.</div>
+<div class="rule"></div>
+<p>Harinas de quinoa y arroz · 500 g</p>
+</div>
+</section>
+
+<div class="strip">
+Ingredientes seleccionados · Inspiración natural · Santa Cruz, Bolivia
+</div>
+
+<section id="nosotros">
+<div class="about">
+<div class="about-art">
+<span class="eyebrow">Nuestra filosofía</span>
+<strong>Simple.<br>Natural.<br>Para todos.</strong>
+<div class="rule"></div>
+<p>Una marca inspirada en la naturaleza.</p>
+</div>
+
+<div>
+<div class="eyebrow">Quiénes somos</div>
+<h2 style="font-size:42px;line-height:1.15;margin-top:12px">
+Una idea que nace de la naturaleza.
+</h2>
+<p>
+FLUORA es un proyecto creado para ofrecer alternativas a las
+harinas tradicionales, con opciones de arroz y quinoa para
+personas que buscan productos sin gluten y nuevas posibilidades
+para cocinar y hornear.
+</p>
+<p>
+Nuestra identidad combina una inspiración natural, empaques
+prácticos e información clara para ayudar a nuestros clientes
+a descubrir cómo utilizar cada harina.
+</p>
+<p>
+Nacemos en Santa Cruz de la Sierra, Bolivia, con la intención
+de acercar estas alternativas a más hogares y crecer escuchando
+las necesidades de nuestros clientes.
+</p>
+</div>
+</div>
+</section>
+
+<section class="products" id="productos">
+<div class="section-heading">
+<div class="eyebrow">Nuestra colección</div>
+<h2>Dos harinas. Muchas posibilidades.</h2>
+<p>Dos ingredientes para acompañar tus recetas dulces y saladas.</p>
+</div>
+
+<div class="product-grid">
+<article class="product">
+<div class="number">01 / Nuestra selección</div>
+<h3>Harina de quinoa</h3>
+<p>
+Una alternativa con sabor característico para experimentar
+con preparaciones caseras.
+</p>
+<h4>¿Por qué quinoa?</h4>
+<p>
+La quinoa aporta proteína y fibra. La elegimos para ofrecer
+una opción nutritiva y versátil para quienes quieren variar
+los ingredientes de sus recetas.
+</p>
+<h4>Ideal para</h4>
+<p>Panqueques, muffins, galletas, panes y productos horneados.</p>
+<div class="price">Bs 40 <span class="weight">/ 500 g</span></div>
+</article>
+
+<article class="product">
+<div class="number">02 / Nuestra selección</div>
+<h3>Harina de arroz</h3>
+<p>
+Una harina versátil y de sabor suave para sumar variedad
+a tus preparaciones.
+</p>
+<h4>¿Por qué arroz?</h4>
+<p>
+La elegimos por su sabor delicado y su versatilidad, que
+permite combinarla con ingredientes dulces y salados.
+</p>
+<h4>Ideal para</h4>
+<p>Galletas, tortas, panqueques, masas y mezclas para hornear.</p>
+<div class="price">Bs 25 <span class="weight">/ 500 g</span></div>
+</article>
+</div>
+
+<p class="section-intro" style="margin:30px auto 0;text-align:center;font-size:12px">
+Para personas que necesitan evitar el gluten por razones médicas,
+es importante verificar el etiquetado y los controles de
+contaminación cruzada del producto.
+</p>
+</section>
+
+<section id="beneficios">
+<div class="section-heading">
+<div class="eyebrow">Nuestra esencia</div>
+<h2>Elegidas con intención.</h2>
+<p>Queremos que cada ingrediente tenga un lugar claro en tu cocina.</p>
+</div>
+
+<div class="benefits">
+<article class="benefit">
+<h3>Más opciones</h3>
+<p>
+Las harinas de arroz y quinoa permiten explorar nuevas texturas,
+sabores y recetas más allá de la harina de trigo tradicional.
+</p>
+</article>
+<article class="benefit">
+<h3>Ingredientes versátiles</h3>
+<p>
+Elegimos arroz por su sabor suave y quinoa por su aporte de
+proteína y fibra y su lugar en la alimentación regional.
+</p>
+</article>
+<article class="benefit">
+<h3>Una marca consciente</h3>
+<p>
+Nuestra identidad se inspira en la naturaleza, con empaques
+sencillos e información pensada para facilitar la elección.
+</p>
+</article>
+</div>
+</section>
+
+<section class="contact" id="contacto">
+<div class="section-heading">
+<div class="eyebrow">Contacto</div>
+<h2>Nos encantará conocerte.</h2>
+<p>
+¿Tienes preguntas sobre nuestras harinas o quieres hacer un pedido?
+Escríbenos.
+</p>
+</div>
+
+<div class="contact-grid">
+<div>
+<h3 style="font-size:28px">Conecta con FLUORA</h3>
+
+<div class="contact-item">
+<small>Redes sociales</small>
+<a href="https://www.instagram.com/flourabo/" target="_blank"
+rel="noopener noreferrer">@flourabo</a>
+</div>
+
+<div class="contact-item">
+<small>Teléfono / WhatsApp</small>
+<p>Próximamente. Por ahora, contáctanos por Instagram.</p>
+</div>
+
+<div class="contact-item">
+<small>Ubicación</small>
+<p>Santa Cruz de la Sierra, Bolivia</p>
+</div>
+</div>
+
+<div class="map">
+<div class="eyebrow">Encuéntranos</div>
+<h3>Santa Cruz de la Sierra</h3>
+<p>
+Bolivia. Esta es una referencia general de la ciudad,
+no una dirección comercial exacta.
+</p>
+<a class="button"
+href="https://www.google.com/maps/search/?api=1&query=Santa+Cruz+de+la+Sierra%2C+Bolivia"
+target="_blank" rel="noopener noreferrer">
+Ver mapa
+</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<span class="logo" style="font-size:20px">FLUORA</span>
+<span>Raíces naturales. Hechas para todos.</span>
+<span>© 2026 FLUORA · Santa Cruz, Bolivia</span>
+</footer>
+</body>
+</html>
